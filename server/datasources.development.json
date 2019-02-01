@@ -1,0 +1,26 @@
+{
+  "db": {
+    "host": "localhost",
+    "port": 3306,
+    "database": "shop-api",
+    "connector": "mysql",
+    "createDatabase": true,
+    "user": "root",
+    "password": "root",
+    "connectionLimit": 20,
+    "max": 100
+  },
+  "redis": {
+    "host": "localhost",
+    "port": 6379,
+    "name": "redis",
+    "connector": "redis",
+    "database": 10
+  },
+  "storage": {
+    "name": "storage",
+    "connector": "loopback-component-storage",
+    "provider": "filesystem",
+    "root": "./static"
+  }
+}

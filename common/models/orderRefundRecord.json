@@ -1,0 +1,49 @@
+{
+  "name": "OrderRefundRecord",
+  "plural": "orderRefundRecords",
+  "mixins": {
+    "ShortId": {},
+    "TimeStamp": {
+      "index": true
+    }
+  },
+  "properties": {
+    "id": {
+      "type": "string",
+      "id": true
+    },
+    "orderNo": {
+      "type": "string",
+      "index": true
+    },
+    "status": {
+      "type": "string",
+      "index": true
+    },
+    "reason": {
+      "type": "string"
+    },
+    "fee": {
+      "type": "number"
+    },
+    "refundOrderNo": {
+      "type": "string"
+    }
+  },
+  "validations": [],
+  "relations": {
+    "order": {
+      "type": "belongsTo",
+      "model": "Order"
+    }
+  },
+  "acls": [
+    {
+      "accessType": "*",
+      "principalType": "ROLE",
+      "principalId": "$everyone",
+      "permission": "ALLOW"
+    }
+  ],
+  "methods": {}
+}

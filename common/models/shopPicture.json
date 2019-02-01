@@ -1,0 +1,9 @@
+{
+  "name": "ShopPicture",
+  "base": "Model",
+  "properties": {},
+  "validations": [],
+  "relations": {},
+  "acls": [],
+  "methods": {}
+}

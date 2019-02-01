@@ -1,0 +1,41 @@
+{
+  "name": "Verification",
+  "base": "PersistedModel",
+  "idInjection": true,
+  "options": {
+    "validateUpsert": true
+  },
+  "mixins": {
+    "ShortId": {}
+  },
+  "properties": {
+    "id": {
+      "type": "string",
+      "id": true
+    },
+    "mobile": {
+      "type": "string",
+      "required": true,
+      "index": true
+    },
+    "code": {
+      "type": "string",
+      "required": true,
+      "index": true
+    },
+    "ttl": {
+      "type": "number",
+      "description": "time to live in seconds (30 minute by default)",
+      "default": 1800
+    },
+    "created": {
+      "type": "Date",
+      "index": true,
+      "defaultFn": "now"
+    }
+  },
+  "validations": [],
+  "relations": {},
+  "acls": [],
+  "methods": {}
+}

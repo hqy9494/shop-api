@@ -1,0 +1,49 @@
+{
+  "extends": "xo/esnext.js",
+  "rules": {
+    "no-unused-expressions": 0,
+    "space-infix-ops": 0,
+    "default-case": 0,
+    "no-else-return": 0,
+    "camelcase": 0,
+    "linebreak-style": 0,
+    "no-multi-assign": 0,
+    "space-before-function-paren": 0,
+    "capitalized-comments": 0,
+    "prefer-arrow-callback": 0,
+    "no-implicit-coercion": 0,
+    "brace-style": [
+      "error",
+      "1tbs",
+      {
+        "allowSingleLine": true
+      }
+    ],
+    "quote-props": [
+      2,
+      "consistent-as-needed"
+    ],
+    "new-cap": 0,
+    "no-return-assign": 0,
+    "no-warning-comments": 0,
+    "comma-dangle": 0,
+    "curly": 0,
+    "no-tabs": 0,
+    "indent": [
+      "warn",
+      2
+    ],
+    "import/export": 0,
+    "object-curly-spacing": 0,
+    "arrow-parens": 0,
+    "max-nested-callbacks": [
+      2,
+      10
+    ]
+  },
+  "parserOptions": {
+    "ecmaFeatures": {
+      "experimentalObjectRestSpread": true
+    }
+  }
+}

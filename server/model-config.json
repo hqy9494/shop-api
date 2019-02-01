@@ -1,0 +1,431 @@
+{
+  "_meta": {
+    "sources": [
+      "loopback/common/models",
+      "loopback/server/models",
+      "../common/models",
+      "./models"
+    ],
+    "mixins": [
+      "loopback/common/mixins",
+      "loopback/server/mixins",
+      "../node_modules/loopback-ds-timestamp-mixin",
+      "../common/mixins",
+      "./mixins"
+    ]
+  },
+  "User": {
+    "dataSource": "db",
+    "public": false
+  },
+  "AccessToken": {
+    "dataSource": "db",
+    "public": false
+  },
+  "ACL": {
+    "dataSource": "db",
+    "public": false
+  },
+  "RoleMapping": {
+    "dataSource": "db",
+    "public": false,
+    "options": {
+      "strictObjectIDCoercion": true
+    }
+  },
+  "Role": {
+    "dataSource": "db",
+    "public": false
+  },
+  "Account": {
+    "dataSource": "db",
+    "options": {
+      "remoting": {
+        "sharedMethods": {
+          "*": false,
+          "enable": true,
+          "disable": true,
+          "me": true,
+          "getUsers": true,
+          "getUserCount": true,
+          "getUser": true,
+          "getStaff": true,
+          "getStaffs": true,
+          "createStaff": true,
+          "getRoles": true,
+          "login": true,
+          "updateStaff": true,
+          "createRole": true,
+          "loginOrCreateByOpenId": true,
+          "getWechatInfo": true,
+          "getDrawToken": true,
+          "getUnionid": true,
+          "updateRole": true
+        }
+      }
+    }
+  },
+  "Menu": {
+    "dataSource": "db",
+    "options": {
+      "remoting": {
+        "sharedMethods": {
+          "*": false,
+          "getFirstMenus": true,
+          "getChildMenus": true,
+          "getMenuJson": true,
+          "getById": true,
+          "updateById": true,
+          "createMenu": true
+        }
+      }
+    }
+  },
+  "RoleMenu": {
+    "dataSource": "db",
+    "options": {
+      "remoting": {
+        "sharedMethods": {
+          "*": false,
+          "getMyMenu": true,
+          "setMenuOfRole": true,
+          "getAllRole": true,
+          "getMenusByRoleId": true,
+          "getRolesByMenuId": true,
+          "getUsersByRoleId": true,
+          "updateRole": true
+        }
+      }
+    }
+  },
+  "Permission": {
+    "dataSource": false,
+    "options": {
+      "remoting": {
+        "sharedMethods": {
+          "*": false,
+          "getMethods": true,
+          "createPermissions": true,
+          "getAccessMethodsByRole": true,
+          "getRolesByAccessMethod": true
+        }
+      }
+    }
+  },
+  "Product": {
+    "dataSource": "db",
+    "options": {
+      "remoting": {
+        "sharedMethods": {
+          "*": false,
+          "updateProduct": true,
+          "getProductSingle": true
+        }
+      }
+    }
+  },
+  "Address": {
+    "dataSource": "db",
+    "options": {
+      "remoting": {
+        "sharedMethods": {
+          "*": false,
+          "addressMy": true,
+          "addressCreateMy": true,
+          "getAddressById": true,
+          "updateAddress": true,
+          "getWechatSDK": true,
+          "deleteById": true,
+          "updateAddressByAdmin": true,
+          "createAddressByAdmin": true
+        }
+      }
+    }
+  },
+  "Order": {
+    "dataSource": "db",
+    "options": {
+      "remoting": {
+        "sharedMethods": {
+          "*": false,
+          "getOrderById": true,
+          "createOrder": true,
+          "getOwnerOrder": true,
+          "refund": true,
+          "fahuoOrder": true,
+          "getOwnerCount": true,
+          "getAll": true,
+          "getLogisticsDetail": true,
+          "newCount": true,
+          "getFahuo": true,
+          "cancelFahuo": true,
+          "reFahuo": true,
+          "fahuoByAdmin": true
+        }
+      }
+    }
+  },
+  "OrderRefundRecord": {
+    "dataSource": "db",
+    "options": {
+      "remoting": {
+        "sharedMethods": {
+          "*": false
+        }
+      }
+    }
+  },
+  "Logistics": {
+    "dataSource": "db",
+    "options": {
+      "remoting": {
+        "sharedMethods": {
+          "*": false,
+          "updateLogistics": true
+        }
+      }
+    }
+  },
+  "ShopPicture": {
+    "dataSource": "storage",
+    "public": true,
+    "options": {
+      "remoting": {
+        "sharedMethods": {
+          "*": false,
+          "upload": true
+        }
+      }
+    }
+  },
+  "Crystal": {
+    "dataSource": "db",
+    "options": {
+      "remoting": {
+        "sharedMethods": {
+          "*": false,
+          "getMy": true,
+          "updateLuckyPoint": true
+        }
+      }
+    }
+  },
+  "DrawRecord": {
+    "dataSource": "db",
+    "options": {
+      "remoting": {
+        "sharedMethods": {
+          "*": false,
+          "draw": true,
+          "getMy": true,
+          "getAll": true,
+          "findById": true,
+          "count": true,
+          "addAddress": true,
+          "fahuo": true,
+          "getLogisticsDetail": true,
+          "getALLEXCEL": true
+        }
+      }
+    }
+  },
+  "DrawSetting": {
+    "dataSource": "db",
+    "options": {
+      "remoting": {
+        "sharedMethods": {
+          "*": false,
+          "getSetting": true,
+          "updateSetting": true,
+          "updatePrizeContent": true,
+          "open": true
+        }
+      }
+    }
+  },
+  "TaobaoCoupon": {
+    "dataSource": "db",
+    "options": {
+      "remoting": {
+        "sharedMethods": {
+          "*": false,
+          "find": true,
+          "get": true,
+          "count": true,
+          "getTaobaoCouponsByValue": true,
+          "create": true,
+          "prototype.patchAttributes": true
+        }
+      }
+    }
+  },
+  "BookCard": {
+    "dataSource": "db",
+    "options": {
+      "remoting": {
+        "sharedMethods": {
+          "*": false,
+          "getCard": true,
+          "getAll": true,
+          "count": true,
+          "getMy": true,
+          "deleteById": true
+        }
+      }
+    }
+  },
+  "Statistic": {
+    "dataSource": "db",
+    "options": {
+      "remoting": {
+        "sharedMethods": {
+          "*": false,
+          "getAll": true,
+          "getFixedStatistic": true,
+          "count": true,
+          "getStatisticByRangeDate": true,
+          "getAverageData": true,
+          "tradeSurvey": true,
+          "regularRate": true
+        }
+      }
+    }
+  },
+  "MergeOrder": {
+    "dataSource": "db",
+    "options": {
+      "remoting": {
+        "sharedMethods": {
+          "*": false
+        }
+      }
+    }
+  },
+  "LPTeamAccount": {
+    "dataSource": "db",
+    "options": {
+      "remoting": {
+        "sharedMethods": {
+          "*": false
+        }
+      }
+    }
+  },
+  "LPTeam": {
+    "dataSource": "db",
+    "options": {
+      "remoting": {
+        "sharedMethods": {
+          "*": false,
+          "makeTeam": true,
+          "getMyTeam": true,
+          "getYdayReward": true,
+          "support": true,
+          "getDetail": true,
+          "checkUser": true,
+          "settle": true
+        }
+      }
+    }
+  },
+  "LPSupport": {
+    "dataSource": "db",
+    "options": {
+      "remoting": {
+        "sharedMethods": {
+          "*": false
+        }
+      }
+    }
+  },
+  "LPSetting": {
+    "dataSource": "db",
+    "options": {
+      "remoting": {
+        "sharedMethods": {
+          "*": false,
+          "getSetting": true,
+          "updateSetting": true,
+          "find": true
+        }
+      }
+    }
+  },
+  "LPStatistic": {
+    "dataSource": "db",
+    "options": {
+      "remoting": {
+        "sharedMethods": {
+          "*": false,
+          "getAll": true,
+          "getFixedStatistic": true,
+          "count": true,
+          "getSignStatistic": true
+        }
+      }
+    }
+  },
+  "Banner": {
+    "dataSource": "db",
+    "options": {
+      "remoting": {
+        "sharedMethods": {
+          "*": true
+        }
+      }
+    }
+  },
+  "Track": {
+    "dataSource": "db",
+    "options": {
+      "remoting": {
+        "sharedMethods": {
+          "*": false,
+          "find": true,
+          "count": true,
+          "addPV": true,
+          "addUV": true
+        }
+      }
+    }
+  },
+  "LPSignin": {
+    "dataSource": "db",
+    "options": {
+      "remoting": {
+        "sharedMethods": {
+          "*": false,
+          "signin": true,
+          "getSignInfo": true,
+          "getSetting": true,
+          "find": true,
+          "count": true
+        }
+      }
+    }
+  },
+  "LPSignUser": {
+    "dataSource": "db",
+    "options": {
+      "remoting": {
+        "sharedMethods": {
+          "*": false,
+          "getInfo": true,
+          "click": true,
+          "find": true,
+          "count": true
+        }
+      }
+    }
+  },
+  "Agreement": {
+    "dataSource": "db",
+    "options": {
+      "remoting": {
+        "sharedMethods": {
+          "*": true
+        }
+      }
+    }
+  }
+}

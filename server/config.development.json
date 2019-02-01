@@ -1,0 +1,29 @@
+{
+  "wechat": {
+    "appid": "wxfc42f0a234771a0d",
+    "appSecret": "0f30253d26c815ef318c2957d3e70bcd",
+    "encodingAESKey": "VgBh2CjxfJNcIgxXSEeEx30ieggKGsbauZZGh11IW6T",
+    "partnerKey": "NP79oZiLm4WbDmLvWcvB7wMhMNnsLkYL",
+    "mchId": "1514005701",
+    "domain": "https://test.shop.lkd.yooyuu.com.cn",
+    "cdnDomain": "https://test.shop.lkd.yooyuu.com.cn/static/wechat/www"
+  },
+  "disablePay": false,
+  "luckydraw": {
+    "url": "https://test.lkd.yooyuu.com.cn",
+    "token": "shopping-onlinexhek04CKT0Sdiv2zENpEy6ibhlucky-draw"
+  },
+  "finexx": {
+    "url": "http://api.fineex.net:801/Interface/InterfaceWeb/InterfaceFwWMS.ashx",
+    "app_key": "888888",
+    "app_secret": "123321",
+    "partner_id": "0210043835",
+    "wareHouseCode": "9156",
+    "barCode": "20180917001"
+  },
+  "domain": "https://test.shop.lkd.yooyuu.com.cn",
+  "LP": {
+    "statistic": "0 30 3 * * *",
+    "settle": "30 41 * * * *"
+  }
+}

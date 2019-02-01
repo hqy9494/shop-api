@@ -1,0 +1,64 @@
+{
+  "name": "Statistic",
+  "mixins": {
+    "ShortId": {},
+    "SkipLimit": {},
+    "TimeStamp": {
+      "index": true
+    }
+  },
+  "properties": {
+    "id": {
+      "type": "string",
+      "id": true
+    },
+    "date": {
+      "type": "string",
+      "index": true,
+      "unique": true,
+      "description": "统计日期"
+    },
+    "orderCount": {
+      "type": "number",
+      "default": 0,
+      "description": "订单数"
+    },
+    "boxCount": {
+      "type": "number",
+      "default": 0,
+      "description": "销售盒数"
+    },
+    "drawCount": {
+      "type": "number",
+      "default": 0,
+      "description": "水晶抽奖数"
+    },
+    "newUser": {
+      "type": "number",
+      "default": 0,
+      "description": "购买新用户数"
+    },
+    "frequentUser": {
+      "type": "number",
+      "default": 0,
+      "description": "购买老用户数"
+    }
+  },
+  "validations": [],
+  "relations": {},
+  "acls": [
+    {
+      "accessType": "*",
+      "principalType": "ROLE",
+      "principalId": "$everyone",
+      "permission": "DENY"
+    },
+    {
+      "accessType": "*",
+      "principalType": "ROLE",
+      "principalId": "admin",
+      "permission": "ALLOW"
+    }
+  ],
+  "methods": {}
+}

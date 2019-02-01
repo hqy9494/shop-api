@@ -1,0 +1,13 @@
+{
+  "apps": [
+    {
+      "name": "shop-api",
+      "script": "server/server.js",
+      "instances": "2",
+      "env": {
+        "NODE_ENV": "production",
+        "DEBUG": "shop:*"
+      }
+    }
+  ]
+}

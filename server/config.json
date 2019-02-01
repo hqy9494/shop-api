@@ -1,0 +1,106 @@
+{
+  "restApiRoot": "/api",
+  "host": "0.0.0.0",
+  "port": 4010,
+  "remoting": {
+    "context": false,
+    "rest": {
+      "handleErrors": false,
+      "normalizeHttpPath": false,
+      "xml": false
+    },
+    "json": {
+      "strict": false,
+      "limit": "100kb"
+    },
+    "urlencoded": {
+      "extended": true,
+      "limit": "100kb"
+    },
+    "cors": false
+  },
+  "wechat": {
+    "appid": "wx901d0359f57413fb",
+    "appSecret": "ad82f0e2f3c7ecba6aa11cc79afd37ec",
+    "encodingAESKey": "f79GcHyo3Fa7oMngEEzSDYqTkmRrvBQ1Fhl5E2Ix5Lo",
+    "partnerKey": "NP79oZiLm4WbDmLvWcvB7wMhMNnsLkYL",
+    "mchId": "1504018241",
+    "domain": "http://shop.lkd.yooyuu.com.cn",
+    "cdnDomain": "http://cdn.shop.lkd.yooyuu.com.cn/static/wechat/www1"
+  },
+  "logistics": {
+    "key": "051895da4a7b53eba3186242cc70feec",
+    "url": "http://api.56jiekou.com/index.php"
+  },
+  "LogisticsInterval": 12,
+  "overtime": {
+    "waitPayOvertime": 600,
+    "waitShippingOvertime": 120,
+    "shippingOvertime": 120
+  },
+  "beginTransactionMaxWait": 5000,
+  "simulationPayCallbackPassword": "11d2c9f3-9f37-4f23-a5be-78a5d879fdb1",
+  "limit": 20,
+  "maxInventory": 16,
+  "maxTransaction": 15,
+  "modeTextPrice": 0.01,
+  "redlock": {
+    "port": 6379,
+    "db": 14
+  },
+  "redis": {
+    "port": 6379,
+    "db": 13
+  },
+  "mqtt": "mqtt://localhost",
+  "hydra": {
+    "hydra": {
+      "serviceName": "sexybox-api-service",
+      "serviceIP": "",
+      "servicePort": 9001,
+      "serviceType": "sexybox",
+      "serviceDescription": "sexybox-api-service",
+      "plugins": {
+        "hydra-plugin-rpc": {}
+      },
+      "redis": {
+        "url": "localhost",
+        "port": 6379,
+        "db": 15
+      }
+    }
+  },
+  "sms": {
+    "accessKeyId": "LTAIk8SXUVmTbg2S",
+    "secretAccessKey": "NnE6V04CKT0Sdiv2zENpEy6ibhgYz7",
+    "sign": "有鱼",
+    "templates": {
+      "code": "SMS_115380024"
+    }
+  },
+  "disablePay": false,
+  "luckydraw": {
+    "url": "https://lkd.yooyuu.com.cn",
+    "token": "shopping-onlinexhek04CKT0Sdiv2zENpEy6ibhlucky-draw"
+  },
+  "domain": "http://cdn.shop.lkd.yooyuu.com.cn",
+  "finexx": {
+    "url": "http://api.fineex.net:801/Interface/InterfaceWeb/InterfaceFwWMS.ashx",
+    "app_key": "100210044998",
+    "app_secret": "B603B814430D45A7AECF357E37599540",
+    "partner_id": "0210044998",
+    "wareHouseCode": "23132",
+    "barCode": "XYHZ666"
+  },
+  "statistic": "0 45 3 * * *",
+  "mergeOrderSchedule": "0 45 2 * * *",
+  "kvs": {
+    "port": 6379,
+    "db": 13,
+    "adapter": "redis"
+  },
+  "LP": {
+    "statistic": "0 30 3 * * *",
+    "settle": "5 0 0 * * *"
+  }
+}

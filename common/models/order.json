@@ -1,0 +1,113 @@
+{
+  "name": "Order",
+  "plural": "orders",
+  "mixins": {
+    "ShortId": {},
+    "SkipLimit": {},
+    "TimeStamp": {
+      "index": true
+    }
+  },
+  "properties": {
+    "id": {
+      "type": "string",
+      "id": true
+    },
+    "no": {
+      "type": "string",
+      "index": true,
+      "description": "订单编号"
+    },
+    "buyOpenid": {
+      "type": "string",
+      "index": true,
+      "description": "购买者openid"
+    },
+    "buyerId": {
+      "type": "string",
+      "index": true,
+      "description": "购买者id"
+    },
+    "payTime": {
+      "type": "date",
+      "index": true,
+      "description": "支付时间"
+    },
+    "payData": {
+      "type": "object",
+      "description": "调起支付数据"
+    },
+    "price": {
+      "type": "number",
+      "dataType": "float",
+      "description": "商品单价",
+      "default": 30
+    },
+    "total": {
+      "type": "number",
+      "description": "购买商品数",
+      "default": 1
+    },
+    "totalFee": {
+      "type": "number",
+      "dataType": "float",
+      "description": "订单总价",
+      "default": 30
+    },
+    "status": {
+      "type": "string",
+      "index": true,
+      "default": "WAIT_PAY",
+      "description": "订单状态，WAIT_PAY-未付款 PAID-已付款(待发货) WAIT_REFUND-等待退款 REFUND-已退款 SEND-已发货 RECEIVED-已签收 CLOSED-订单关闭 LOGISTIC_CANCEL-物流取消"
+    },
+    "refundStatus": {
+      "type": "string",
+      "index": true,
+      "description": "apply-申请退款 pass-同意退款 refuse-拒绝"
+    },
+    "addressId": {
+      "type": "string",
+      "index": true,
+      "description": "我的地址"
+    },
+    "expressNo": {
+      "type": "string",
+      "index": true,
+      "description": "快递单号"
+    },
+    "productNo": {
+      "type": "array",
+      "description": "产品编号"
+    }
+  },
+  "validations": [],
+  "relations": {},
+  "acls": [
+    {
+      "accessType": "*",
+      "principalType": "ROLE",
+      "principalId": "$everyone",
+      "permission": "DENY"
+    },
+    {
+      "accessType": "*",
+      "principalType": "ROLE",
+      "principalId": "admin",
+      "permission": "ALLOW"
+    },
+    {
+      "accessType": "*",
+      "principalType": "ROLE",
+      "principalId": "$authenticated",
+      "permission": "ALLOW",
+      "property": [
+        "createOrder",
+        "getOrderById",
+        "getOwnerOrder",
+        "getOwnerCount",
+        "getLogisticsDetail"
+      ]
+    }
+  ],
+  "methods": {}
+}

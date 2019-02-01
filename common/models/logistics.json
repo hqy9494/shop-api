@@ -1,0 +1,73 @@
+{
+  "name": "Logistics",
+  "plural": "logistics",
+  "mixins": {
+    "ShortId": {},
+    "SkipLimit": {},
+    "TimeStamp": {
+      "index": true
+    }
+  },
+  "properties": {
+    "id": {
+      "type": "string",
+      "id": true
+    },
+    "orderId": {
+      "type": "string",
+      "index": true
+    },
+    "company": {
+      "type": "string",
+      "index": true
+    },
+    "no": {
+      "type": "string",
+      "index": true
+    },
+    "state": {
+      "type": "number",
+      "index": true,
+      "description": "0 暂无结果，1 揽件，2 在途，3 派件，4 签收，5 疑难，6 退签， 7 退回 "
+    },
+    "details": {
+      "type": "array"
+    },
+    "lastFetchTime": {
+      "type": "date",
+      "index": true
+    }
+  },
+  "validations": [],
+  "relations": {},
+  "acls": [
+    {
+      "accessType": "*",
+      "principalType": "ROLE",
+      "principalId": "$everyone",
+      "permission": "DENY"
+    },
+    {
+      "accessType": "*",
+      "principalType": "ROLE",
+      "principalId": "admin",
+      "permission": "ALLOW"
+    },
+    {
+      "accessType": "*",
+      "principalType": "ROLE",
+      "principalId": "$authenticated",
+      "permission": "ALLOW",
+      "property": [
+        "getLogisticsDetails"
+      ]
+    },
+    {
+      "accessType": "*",
+      "principalType": "ROLE",
+      "principalId": "staff",
+      "permission": "ALLOW"
+    }
+  ],
+  "methods": {}
+}

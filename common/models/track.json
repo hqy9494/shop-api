@@ -1,0 +1,49 @@
+{
+  "name": "Track",
+  "mixins": {
+    "ShortId": {},
+    "SkipLimit": {},
+    "TimeStamp": {
+      "index": true
+    }
+  },
+  "properties": {
+    "id": {
+      "type": "string",
+      "id": true
+    },
+    "date": {
+      "type": "string",
+      "index": true,
+      "unique": true,
+      "description": "日期"
+    },
+    "pv": {
+      "type": "number",
+      "default": 0,
+      "description": "主页访问次数"
+    },
+    "uv": {
+      "type": "number",
+      "default": 0,
+      "description": "主页访问人数"
+    }
+  },
+  "validations": [],
+  "relations": {},
+  "acls": [
+    {
+      "accessType": "*",
+      "principalType": "ROLE",
+      "principalId": "$everyone",
+      "permission": "ALLOW"
+    },
+    {
+      "accessType": "*",
+      "principalType": "ROLE",
+      "principalId": "admin",
+      "permission": "ALLOW"
+    }
+  ],
+  "methods": {}
+}

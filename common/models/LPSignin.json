@@ -1,0 +1,80 @@
+{
+  "name": "LPSignin",
+  "mixins": {
+    "ShortId": {},
+    "SkipLimit": {},
+    "TimeStamp": {
+      "index": true
+    }
+  },
+  "properties": {
+    "id": {
+      "type": "string",
+      "id": true
+    },
+    "date": {
+      "type": "string",
+      "required": true,
+      "index": true,
+      "description": "日期，格式：2018-09-03"
+    },
+    "userId": {
+      "type": "string",
+      "required": true,
+      "index": true,
+      "description": "签到用户id"
+    },
+    "crystal": {
+      "type": "number",
+      "default": 0,
+      "index": true,
+      "description": "签到获得水晶数"
+    },
+    "isAdd": {
+      "type": "boolean",
+      "default": false,
+      "index": true,
+      "description": "是否为补签"
+    },
+    "magnify": {
+      "type": "number",
+      "default": 1,
+      "index": true,
+      "description": "抽水晶倍率"
+    }
+  },
+  "validations": [],
+  "relations": {
+    "user": {
+      "type": "belongsTo",
+      "model": "Account",
+      "foreignKey": "userId"
+    }
+  },
+  "acls": [
+    {
+      "accessType": "*",
+      "principalType": "ROLE",
+      "principalId": "$everyone",
+      "permission": "DENY"
+    },
+    {
+      "accessType": "*",
+      "principalType": "ROLE",
+      "principalId": "admin",
+      "permission": "ALLOW"
+    },
+    {
+      "accessType": "*",
+      "principalType": "ROLE",
+      "principalId": "$authenticated",
+      "permission": "ALLOW",
+      "property": [
+        "signin",
+        "getSignInfo",
+        "getSetting"
+      ]
+    }
+  ],
+  "methods": {}
+}
